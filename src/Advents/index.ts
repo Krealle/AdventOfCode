@@ -1,8 +1,10 @@
 export type Advent = {
   id: number;
-  Solve: (input: string) => { partOne: string; partTwo: string };
+  Solve: (input: string) => AdventResult;
   Title: string;
 };
+
+export type AdventResult = { partOne: string; partTwo: string };
 
 const advents: Record<string, Advent> = import.meta.glob("./Day*.ts", {
   eager: true,

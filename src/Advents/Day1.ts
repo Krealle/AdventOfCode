@@ -1,3 +1,5 @@
+import type { AdventResult } from ".";
+
 export const Title = "Secret Entrance";
 
 const STARTING_STEP = 50;
@@ -5,7 +7,7 @@ const TOTAL_STEPS = 100;
 const MAX_STEP = 99;
 const MIN_STEP = 0;
 
-export function Solve(input: string) {
+export function Solve(input: string): AdventResult {
   const lines = input.split(/[\s\n]+/);
 
   const instructions = lines.map((line) => {
