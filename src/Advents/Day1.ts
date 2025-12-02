@@ -54,7 +54,7 @@ export function Solve(input: string): AdventResult {
   }
 
   return {
-    partOne: timesLandedAtMinStep.toString(),
-    partTwo: (timesLandedAtMinStep + timesPassedMinStep).toString(),
+    partOne: timesLandedAtMinStep,
+    partTwo: timesLandedAtMinStep + timesPassedMinStep,
   };
 }

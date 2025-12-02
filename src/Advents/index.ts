@@ -4,7 +4,10 @@ export type Advent = {
   Title: string;
 };
 
-export type AdventResult = { partOne: string; partTwo: string };
+export type AdventResult = {
+  partOne: string | number;
+  partTwo: string | number;
+};
 
 const advents: Record<string, Advent> = import.meta.glob("./Day*.ts", {
   eager: true,
