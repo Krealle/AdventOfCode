@@ -1,13 +1,16 @@
 import { useState } from "react";
 import "./App.css";
-import { AdventModules, type Advent } from "./Advents";
+import { AdventModules } from "./Advents";
 
 function App() {
   const [input, setInput] = useState("");
   const [solutionOne, setSolutionOne] = useState<string | number>("");
   const [solutionTwo, setSolutionTwo] = useState<string | number>("");
 
-  const [selectedAdvent, setSelectedAdvent] = useState<Advent | null>(null);
+  const [selectedAdventId, setSelectedAdventId] = useState<number | null>(null);
+  const selectedAdvent = selectedAdventId
+    ? AdventModules[selectedAdventId]
+    : null;
 
   const solveAdvent = () => {
     if (!selectedAdvent) {
@@ -25,12 +28,12 @@ function App() {
       <h1>Advent of Code</h1>
 
       <div className="advent-buttons">
-        {AdventModules.map((advent) => {
+        {AdventModules.map((advent, idx) => {
           return (
             <button
-              className={selectedAdvent?.id === advent.id ? "selected" : ""}
+              className={selectedAdventId === advent.id ? "selected" : ""}
               key={`advent-${advent.id}`}
-              onClick={() => setSelectedAdvent(advent)}
+              onClick={() => setSelectedAdventId(idx)}
             >
               Day {advent.id}
             </button>
