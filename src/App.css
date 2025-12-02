@@ -8,6 +8,7 @@
 .advent-buttons {
   display: flex;
   justify-content: center;
+  gap: 5px;
 
   .selected {
     background-color: #424141;

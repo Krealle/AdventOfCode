@@ -8,9 +8,8 @@ function App() {
   const [solutionTwo, setSolutionTwo] = useState<string | number>("");
 
   const [selectedAdventId, setSelectedAdventId] = useState<number | null>(null);
-  const selectedAdvent = selectedAdventId
-    ? AdventModules[selectedAdventId]
-    : null;
+  const selectedAdvent =
+    selectedAdventId !== null ? AdventModules[selectedAdventId] : null;
 
   const solveAdvent = () => {
     if (!selectedAdvent) {
@@ -31,7 +30,7 @@ function App() {
         {AdventModules.map((advent, idx) => {
           return (
             <button
-              className={selectedAdventId === advent.id ? "selected" : ""}
+              className={selectedAdvent?.id === advent.id ? "selected" : ""}
               key={`advent-${advent.id}`}
               onClick={() => setSelectedAdventId(idx)}
             >
