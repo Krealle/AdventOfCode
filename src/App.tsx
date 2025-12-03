@@ -63,16 +63,16 @@ function App() {
           </div>
 
           <div className="solutions">
-            {solutionOne && (
+            {solutionOne ? (
               <span>
                 Part 1: <b>{solutionOne}</b>
               </span>
-            )}
-            {solutionTwo && (
+            ) : null}
+            {solutionTwo ? (
               <span>
                 Part 2: <b>{solutionTwo}</b>
               </span>
-            )}
+            ) : null}
           </div>
         </div>
       )}
