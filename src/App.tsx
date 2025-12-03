@@ -46,7 +46,7 @@ function App() {
 
           <div className="input-solve-container">
             <div className="input-container">
-              <span>Input</span>
+              <span className="input-container-label">Input</span>
               <input
                 type="text"
                 value={input}

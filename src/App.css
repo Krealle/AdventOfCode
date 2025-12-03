@@ -30,6 +30,10 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+
+      .input-container-label {
+        font-weight: bold;
+      }
     }
 
     .solve-button {
