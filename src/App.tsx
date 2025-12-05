@@ -20,6 +20,15 @@ function App() {
 
     setSolutionOne(result.partOne);
     setSolutionTwo(result.partTwo);
+    setAdventComponent(result.component);
+  };
+
+  const selectAdvent = (index: number) => {
+    setSelectedAdventId(index);
+
+    setSolutionOne("");
+    setSolutionTwo("");
+    setAdventComponent(undefined);
   };
 
   return (
@@ -32,7 +41,7 @@ function App() {
             <button
               className={selectedAdvent?.id === advent.id ? "selected" : ""}
               key={`advent-${advent.id}`}
-              onClick={() => setSelectedAdventId(idx)}
+              onClick={() => selectAdvent(idx)}
             >
               Day {advent.id}
             </button>
