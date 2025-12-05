@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type JSX } from "react";
 import "./App.css";
 import { AdventModules } from "./Advents";
 
@@ -6,6 +6,9 @@ function App() {
   const [input, setInput] = useState("");
   const [solutionOne, setSolutionOne] = useState<string | number>("");
   const [solutionTwo, setSolutionTwo] = useState<string | number>("");
+  const [adventComponent, setAdventComponent] = useState<
+    JSX.Element | undefined
+  >();
 
   const [selectedAdventId, setSelectedAdventId] = useState<number | null>(null);
   const selectedAdvent =
@@ -83,6 +86,8 @@ function App() {
               </span>
             ) : null}
           </div>
+
+          <div className="advent-component">{adventComponent}</div>
         </div>
       )}
     </>
