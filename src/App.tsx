@@ -59,8 +59,7 @@ function App() {
           <div className="input-solve-container">
             <div className="input-container">
               <span className="input-container-label">Input</span>
-              <input
-                type="text"
+              <textarea
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
               />
